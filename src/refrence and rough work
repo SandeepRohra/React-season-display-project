@@ -1,0 +1,12 @@
+//constructor is always used and called when we use state
+  constructor(props) {
+    // super should must be called and props should be passed to work with state
+    // if its confusing reffer lacture 57-60 of steives course
+    super(props)
+    //1) it is the perfect time to iitialise state
+
+    //2) This is only time we use this.state mns only when we initalise it in constructor function
+    this.state = { lat: null, errorMessage: '' }
+  }
+
+  this can also be used but we preffer what we have done there in indexx.js
