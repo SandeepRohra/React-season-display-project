@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import reactDom from 'react-dom'
 import SeasonDisplay from './components/Season-display'
+import Buffering from './components/Buffer'
 class App extends Component {
   // We initalise state here  but there is also a alternate way which is some what large and complicated
   //Reffer to reference and rough work convert in inyto jsx file for more clearity
@@ -14,7 +15,7 @@ class App extends Component {
     )
   }
 
-  render() {
+  renderContent = () => {
     if (this.state.errorMessage && !this.state.lat) {
       return (
         <div>
@@ -29,12 +30,12 @@ class App extends Component {
         </div>
       )
     } else {
-      return (
-        <div>
-          <h1>Loading</h1>
-        </div>
-      )
+      return <Buffering message="Please allow location acsess to continue" />
     }
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>
   }
 }
 
